@@ -2,7 +2,7 @@ import react from 'react';
 
 // Import Styles
 import styled from 'styled-components';
-import { StyledAbout, StyledDescription, StyledImage, StyledHide } from '../styles';
+import { StyledAbout } from '../styles';
 
 
 const FaqSection = () => {
