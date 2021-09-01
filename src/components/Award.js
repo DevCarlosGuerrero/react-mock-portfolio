@@ -25,7 +25,7 @@ const StyledAward = styled.div`
     .line {
         width: 100%;
         background: #23d997;
-        height: 0.5rem;
+        height: 0.4rem;
         margin: 1rem 0rem;
     }
 `;
