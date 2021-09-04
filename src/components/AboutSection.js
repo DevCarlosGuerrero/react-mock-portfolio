@@ -3,6 +3,9 @@ import React from 'react';
 // Import Images
 import home1 from '../img/home1.png';
 
+// Import Components
+import Wave from './Wave';
+
 // Import Styles
 import styled from 'styled-components';
 import { StyledAbout, StyledDescription, StyledImage, StyledHide } from '../styles';
@@ -33,6 +36,7 @@ const AboutSection = () => {
             <StyledImage>
                 <motion.img variants={photoAnimation} src={home1} alt="Man holding camera" />
             </StyledImage>
+            <Wave />
         </StyledAbout>
     );
 };
