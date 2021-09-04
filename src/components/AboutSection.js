@@ -7,8 +7,9 @@ import home1 from '../img/home1.png';
 import styled from 'styled-components';
 import { StyledAbout, StyledDescription, StyledImage, StyledHide } from '../styles';
 
-//Framer Motion
+// Animations
 import { motion } from  'framer-motion';
+import { titleAnimation, fadeAnimation, photoAnimation } from '../animation';
 
 const AboutSection = () => {
 
@@ -17,20 +18,20 @@ const AboutSection = () => {
             <StyledDescription>
                 <div className="title">
                     <StyledHide>
-                        <motion.h2>We work to make</motion.h2>
+                        <motion.h2 variants={titleAnimation}>We work to make</motion.h2>
                     </StyledHide>
                     <StyledHide>
-                        <motion.h2>your <span>dreams</span> come</motion.h2>
+                        <motion.h2 variants={titleAnimation}>your <span>dreams</span> come</motion.h2>
                     </StyledHide>
                     <StyledHide>
-                        <motion.h2>true.</motion.h2>
+                        <motion.h2 variants={titleAnimation}>true.</motion.h2>
                     </StyledHide>
                 </div>
-                <p>Contact us for any photography or video ideas that ypu have. We have professionals with amazing skills.</p>
-                <button>Contact us</button>
+                <motion.p variants={fadeAnimation}>Contact us for any photography or video ideas that ypu have. We have professionals with amazing skills.</motion.p>
+                <motion.button variants={fadeAnimation}>Contact us</motion.button>
             </StyledDescription>
             <StyledImage>
-                <img src={home1} alt="Man holding camera" />
+                <motion.img variants={photoAnimation} src={home1} alt="Man holding camera" />
             </StyledImage>
         </StyledAbout>
     );
