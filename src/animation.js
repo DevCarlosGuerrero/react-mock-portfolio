@@ -72,7 +72,7 @@ export const lineAnimation = {
     show: {
         width: '100%',
         transition: {
-            duration: 1,
+            duration: 1.3,
         }
     }
 };

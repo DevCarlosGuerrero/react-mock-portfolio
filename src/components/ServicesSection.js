@@ -1,4 +1,3 @@
-import react from 'react';
 
 //Import Icons
 import clock from '../img/clock.svg';
