@@ -7,9 +7,22 @@ import { StyledAbout } from "../styles";
 // Import Components
 import Toggle from "./Toggle";
 
+//Import Animations
+import { scrollReveal } from "../animation";
+
+// Import Utils
+import { useScroll } from "./useScroll";
+
 const FaqSection = () => {
+  const [element, controls] = useScroll();
+
   return (
-    <StyledFaq>
+    <StyledFaq
+      variants={scrollReveal}
+      ref={element}
+      animate={controls}
+      initial="hidden"
+    >
       <h2>
         Any Questions <span>FAQ</span>
       </h2>
