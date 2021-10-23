@@ -9,15 +9,15 @@ import MovieDetail from "./pages/MovieDetail";
 
 // Import Components
 import Nav from "./components/Nav";
+import ScrollTop from "./components/ScrollTop";
 
 // Router
 import { Route, Switch, useLocation } from "react-router-dom";
 
 // Animation
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from "framer-motion";
 
 function App() {
-
   const location = useLocation();
 
   return (
@@ -42,6 +42,6 @@ function App() {
       </AnimatePresence>
     </div>
   );
-};
+}
 
 export default App;
