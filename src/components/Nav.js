@@ -4,8 +4,13 @@ import { StyledAbout } from "../styles";
 
 // Router
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+// Animations
+import { motion } from "framer-motion";
 
 const Nav = () => {
+  const { pathname } = useLocation();
+
   return (
     <StyledNav>
       <h1>
@@ -16,12 +21,27 @@ const Nav = () => {
       <ul>
         <li>
           <Link to="/">1. About Us</Link>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: "0%" }}
+            animate={{ width: pathname === "/" ? "100%" : "0%" }}
+          />
         </li>
         <li>
           <Link to="/work">2. Our Work</Link>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: "0%" }}
+            animate={{ width: pathname === "/work" ? "100%" : "0%" }}
+          />
         </li>
         <li>
           <Link to="/contact">3. Contact Us</Link>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: "0%" }}
+            animate={{ width: pathname === "/contact" ? "100%" : "0%" }}
+          />
         </li>
       </ul>
     </StyledNav>
@@ -38,7 +58,7 @@ const StyledNav = styled.nav`
   background: #282828;
   position: sticky;
   top: 0;
-  z-index: 99;
+  z-index: 10;
 
   ul {
     display: flex;
@@ -52,7 +72,7 @@ const StyledNav = styled.nav`
 
   #logo {
     font-family: "Lobster", sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: lighter;
     cursor: pointer;
   }
@@ -60,6 +80,38 @@ const StyledNav = styled.nav`
   a {
     color: #fff;
     text-decoration: none;
+  }
+
+  @media (max-width: 1300px) {
+    flex-direction: column;
+    padding: 2rem 1rem;
+
+    #logo {
+      display: inline-block;
+      margin: 1rem;
+    }
+
+    ul {
+      padding: 2rem;
+      justify-content: space-around;
+      width: 100%;
+
+      li {
+        padding: 0;
+      }
+    }
+  }
+`;
+
+const Line = styled(motion.div)`
+  height: 0.3rem;
+  background: #23d997;
+  width: 0%;
+  position: absolute;
+  bottom: -80%;
+
+  @media (max-width: 1300px) {
+    left: 0%;
   }
 `;
 
